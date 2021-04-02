@@ -15,7 +15,7 @@ var passwordLength = function(){
   }
 }
 
-passwordLength();
+
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
