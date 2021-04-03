@@ -17,10 +17,10 @@
           <h2>Generate a Password</h2>
         </div>
         <div class="user-criteria">
-          <form>
+          <form class="choices-form" name="choices">
             <p>How many characters do you want in your password?</p>
             <label for="password-length">You can choose a number between 8 and 128:</label>
-            <input type="number" placeholder="password length" password-length="password-length" id="password-length"/>
+            <input type="number" id="password-length" name="password-length" min="8" max="128"/>
             <span classe="checkboxes-wrapper">
               <p>Which type of characters would you like your password have?</p>
               <input type="checkbox" name="uppercase" id="uppercase" />
