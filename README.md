@@ -9,3 +9,6 @@ This is a password generator created to increase security for sensitive data by 
 - Validate the user inputs.
 - Generates a password that matches the user criteria.
 - The password must be displayed in the prompt or written in the page.
+
+![A screenshot of the a password generated with all the options](screenshots\screenshotAll.jpg)
+![A screenshot of the a password generated with uppercase and numbers](screenshots\screenshotUN.jpg)
