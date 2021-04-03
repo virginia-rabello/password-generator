@@ -1,6 +1,3 @@
-// Assignment code here
-
-
 //This is a class created for the ranges values
 class ranges {
   constructor(min, max){
@@ -9,6 +6,7 @@ class ranges {
   }
 };
 
+//Class to store data argument for generate password function
 class genData {
   constructor(rangeNum, range1, range2, range3, range4){
     this.rangeNum = rangeNum;
@@ -30,24 +28,26 @@ class genData {
   const rangeLS = new ranges(91, 126);
   const rangeAll = new ranges(32, 126);
 
-// This function request the password's length to the user
+// This function gets the password's length chosen by the user
 var getPasswordLength = function(){
   var length = document.getElementById("password-length").value;
     //Alert user if no value for the password's length is chosen
-     if (length === "" || length === null){
-      alert("You forgot to choose a number");
+     if (length === "" || length === null || length >128 || length < 1){
+      alert("You forgot to choose a number or typed a invalid number");
+      location.reload(true);
       }
       else {
          return length;
         }
 };
-
+// Function to generate a random number in a range
 var genRandomNum = function(min, max) {
   var value = Math.floor(Math.random() * (max - min) + min);
 
   return value;
 };
 
+//This function checks which checkboxes are checked and declares a variable with the information
 var checkboxComb = function(){
   var upp = document.getElementById("uppercase").checked;
   var low = document.getElementById("lowercase").checked;  
@@ -103,10 +103,11 @@ var checkboxComb = function(){
   return data;
 };
 
+//This function generates the password
 var generatePassword = function(length,data) {
   var password = "";
+  //If the data has more than 2 ranges of characters it choses a randomic character in a randomic range
     if(data.rangeNum > 1){
-      
       for(i = 0; length > i; i++){
         var randomRange = genRandomNum(1, data.rangeNum+1);
         console.log(randomRange);
@@ -145,7 +146,9 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
   passwordText.value = password;
 }
-generateBtn.addEventListener("click", writePassword);
 
 // Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
+
+
 
