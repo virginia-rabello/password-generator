@@ -32,7 +32,7 @@ class genData {
 var getPasswordLength = function(){
   var length = document.getElementById("password-length").value;
     //Alert user if no value for the password's length is chosen
-     if (length === "" || length === null || length >128 || length < 1){
+     if (length === "" || length === null || length >128 || length < 8){
       alert("You forgot to choose a number or typed a invalid number");
       location.reload(true);
       }
